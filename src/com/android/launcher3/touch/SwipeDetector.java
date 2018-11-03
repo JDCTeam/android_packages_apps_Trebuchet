@@ -304,6 +304,10 @@ public class SwipeDetector {
         return mSubtractDisplacement < 0;
     }
 
+  	public boolean wasInitialTouchNegative() {
+        return mSubtractDisplacement > 0;
+    }
+
     private boolean reportDragging() {
         if (mDisplacement != mLastDisplacement) {
             if (DBG) {
@@ -326,6 +330,9 @@ public class SwipeDetector {
 
     }
 
+
+  
+    
     /**
      * Computes the damped velocity.
      */
