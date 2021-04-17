@@ -264,6 +264,8 @@ public class SettingsActivity extends FragmentActivity
                             PluginManagerWrapper.hasPlugins(getContext());
 
                 case KEY_MINUS_ONE:
+                	updateIsGoogleAppEnabled();
+                	mShowGoogleAppPref = preference;
                     return LineageUtils.isPackageEnabled(getActivity(), SEARCH_PACKAGE);
 
                 case KEY_TRUST_APPS:
@@ -278,13 +280,9 @@ public class SettingsActivity extends FragmentActivity
                     return true;
                 case KEY_ICON_PACK:
                     setupIconPackPreference(preference);
+                    PluginManagerWrapper.hasPlugins(getContext());
                     return true;
-                            PluginManagerWrapper.hasPlugins(getContext());*/
-                case KEY_ENABLE_MINUS_ONE:
-                    mShowGoogleAppPref = preference;
-                    updateIsGoogleAppEnabled();
-                    return true;
-
+                            
             }
 
             return true;
